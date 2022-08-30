@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>把依赖包安装改成自己的git仓库 | 小洋博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="1000591.jpg">
+    <meta name="description" content="行则不惧行而不缀行则将至">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.b63ec186.css" as="style"><link rel="preload" href="/assets/js/app.5682a45d.js" as="script"><link rel="preload" href="/assets/js/3.3d624b8a.js" as="script"><link rel="preload" href="/assets/js/1.0e44be9f.js" as="script"><link rel="preload" href="/assets/js/15.145e2ae8.js" as="script"><link rel="prefetch" href="/assets/js/10.9c1786e9.js"><link rel="prefetch" href="/assets/js/11.5ec324b4.js"><link rel="prefetch" href="/assets/js/12.6c012fca.js"><link rel="prefetch" href="/assets/js/13.4c34a9c7.js"><link rel="prefetch" href="/assets/js/14.885bd7b8.js"><link rel="prefetch" href="/assets/js/16.d4bb09d6.js"><link rel="prefetch" href="/assets/js/17.8c0648a7.js"><link rel="prefetch" href="/assets/js/18.b59b0a78.js"><link rel="prefetch" href="/assets/js/19.04cc8fe8.js"><link rel="prefetch" href="/assets/js/20.b25aff72.js"><link rel="prefetch" href="/assets/js/21.485e08ef.js"><link rel="prefetch" href="/assets/js/22.24b753de.js"><link rel="prefetch" href="/assets/js/23.94ab592b.js"><link rel="prefetch" href="/assets/js/24.17503c02.js"><link rel="prefetch" href="/assets/js/25.f463b4f1.js"><link rel="prefetch" href="/assets/js/26.ef1cbc7c.js"><link rel="prefetch" href="/assets/js/27.f9317bf1.js"><link rel="prefetch" href="/assets/js/28.037b3bed.js"><link rel="prefetch" href="/assets/js/29.4b68ce27.js"><link rel="prefetch" href="/assets/js/30.1d08ff1f.js"><link rel="prefetch" href="/assets/js/31.740f07d1.js"><link rel="prefetch" href="/assets/js/32.2ba24938.js"><link rel="prefetch" href="/assets/js/33.48e47229.js"><link rel="prefetch" href="/assets/js/34.ea0e13a6.js"><link rel="prefetch" href="/assets/js/35.641f7d3d.js"><link rel="prefetch" href="/assets/js/36.34f7a5a6.js"><link rel="prefetch" href="/assets/js/37.28a9885a.js"><link rel="prefetch" href="/assets/js/38.d213e0b0.js"><link rel="prefetch" href="/assets/js/39.0adee3ca.js"><link rel="prefetch" href="/assets/js/4.4bcdf1f2.js"><link rel="prefetch" href="/assets/js/40.6a74cd55.js"><link rel="prefetch" href="/assets/js/41.03b005fd.js"><link rel="prefetch" href="/assets/js/5.28a07967.js"><link rel="prefetch" href="/assets/js/6.d22d245d.js"><link rel="prefetch" href="/assets/js/7.03f7d4c3.js"><link rel="prefetch" href="/assets/js/8.e08e1a4e.js"><link rel="prefetch" href="/assets/js/9.5bf008a0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b63ec186.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>小洋博客</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>xiaoyang</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="1000755.jpg" alt="小洋博客" class="logo"> <span class="site-name">小洋博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  小羊主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录索引
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="iconfont undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="iconfont undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/npm/" class="nav-link"><i class="iconfont undefined"></i>
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="iconfont undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="iconfont undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="iconfont undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jquery/" class="nav-link"><i class="iconfont undefined"></i>
+  jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端性能/" class="nav-link"><i class="iconfont undefined"></i>
+  前端性能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="iconfont undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/杂谈/" class="nav-link"><i class="iconfont undefined"></i>
+  杂谈
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签索引
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="/blogs/views/messageBoard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/dlly123" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="./public/1000791.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    xiaoyang
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>28</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>13</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  小羊主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录索引
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="iconfont undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="iconfont undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/npm/" class="nav-link"><i class="iconfont undefined"></i>
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="iconfont undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="iconfont undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="iconfont undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jquery/" class="nav-link"><i class="iconfont undefined"></i>
+  jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端性能/" class="nav-link"><i class="iconfont undefined"></i>
+  前端性能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="iconfont undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/杂谈/" class="nav-link"><i class="iconfont undefined"></i>
+  杂谈
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签索引
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="/blogs/views/messageBoard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/dlly123" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>git</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/git/1.html" class="sidebar-link">github的pull request操作</a></li><li><a href="/blogs/git/2.html" aria-current="page" class="active sidebar-link">把依赖包安装改成自己的git仓库</a></li><li><a href="/blogs/git/3.html" class="sidebar-link">npm从零发布一个拖拽组件</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>把依赖包安装改成自己的git仓库</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>xiaoyang</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2022
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">把依赖包安装改成自己的git仓库</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>xiaoyang</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2021-07-22</span></i> <i class="iconfont reco-eye" data-v-3b7f5bdf><span id="/blogs/git/2.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-3b7f5bdf><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>git</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h3 id="前言-问题描述"><a href="#前言-问题描述" class="header-anchor">#</a> 前言（问题描述）</h3> <p>今天团队新接了个项目，框架是已有的，那就正常走流程 ：</p> <ul><li>1.克隆项目代码 <code>git clone ***.git</code></li> <li>2.切换成对应的node版本，然后yarn安装依赖 <code>nvm use ***;yarn install;</code></li> <li>3.然后运行(跑)项目 <code>yarn run ***;</code></li> <li>4.最后可以修改代码或者业务开发</li></ul> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f8d5209e17124524991f3c72d80cc904~tplv-k3u1fbpfcp-watermark.image" alt="image.png">
+想象中是如此美好，现实很残酷。</p> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/56cc4d550e4f41d284a62c52ec6e8f17~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p>分析一下：在第二步的时候安装依赖失败，网络下载该依赖失败，然后看了一下这个依赖是属于需要特定的内网才能安装，而我又没有该vpn，所以是安装不成功的。想起这个ui在之前别的项目是已经有该依赖包的，所以立马想到解决方案：</p> <h3 id="解决方案一-手动导入依赖包"><a href="#解决方案一-手动导入依赖包" class="header-anchor">#</a> 解决方案一：手动导入依赖包</h3> <p>配置中去掉该依赖，然后安装其它可安装的依赖，再从别的地方copy依赖到现在这个项目的node_modules(依赖包)中，这个操作没毛病，按理也能成功。</p> <p>但是如此操作出现了一个坑，依赖A中包含依赖B，而依赖B因为相同的原因安装失败，然后这样，操作就会产生新的报错。</p> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ac1e33b1ccda4fc98fc0d9ae77259d91~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p>下面这张图是依赖包A的安装：</p> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7d5ccde091894f9494cf35015b28b140~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p>从这发现依赖包B的安装失败。</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1933e54e5b524d6bb78f019fcbdbe23c~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p>当然这个也是可以解决的，在依赖A中进行相同类似的操作，(没有出现连环依赖嵌套的话)就能操作成功，然后再把这个依赖包copy到node_modules(依赖包)，在这样一顿操作下，成功的安装完依赖，并成功运行起了项目。</p> <p>不过如此操作有个很大缺点就是团队其它人也这样安装依赖的话，烦都烦死了，哪有心情继续开发。所以我们考虑更佳的方案。</p> <h3 id="依赖配置的几种配置规则"><a href="#依赖配置的几种配置规则" class="header-anchor">#</a> 依赖配置的几种配置规则</h3> <p>在说方案二前，先说说依赖配置的几种规则，<code>本文重点：</code></p> <h4 id="_1-依赖包名称-version"><a href="#_1-依赖包名称-version" class="header-anchor">#</a> 1.依赖包名称:VERSION</h4> <p>这是最常见的依赖配置，VERSION是一个遵循SemVer规范的版本号配置，npm install 时将到npm服务器下载符合指定版本范围的包。
+比如:安装特定版本号的vue 最新版本的vue-bus等等</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;vue&quot;: &quot;2.5.17&quot;,
+&quot;vue-bus&quot;: &quot;^1.2.1&quot;,
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="_2-依赖包名称-dwonload-url"><a href="#_2-依赖包名称-dwonload-url" class="header-anchor">#</a> 2.依赖包名称:DWONLOAD_URL</h4> <p>包名称后面放上包的下载地址，DWONLOAD_URL 是一个可下载的tarball压缩包地址，模块安装时会将这个.tar下载并安装到本地。比如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;test2-js&quot;: &quot;http://cdn.com/test2-js.tar.gz&quot;,
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_3-依赖包名称-local-path"><a href="#_3-依赖包名称-local-path" class="header-anchor">#</a> 3.依赖包名称:LOCAL_PATH</h4> <p>LOCAL_PATH 是一个本地的依赖包路径，例如 file:../pacakges/pkgName。适用于你在本地测试一个npm包，不应该将这种方法应用于线上。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> &quot;@yh/icons-svg&quot;: &quot;file:./lib/icons-svg-4.0.1.tgz&quot;,
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_4-依赖包名称-github-url"><a href="#_4-依赖包名称-github-url" class="header-anchor">#</a> 4.依赖包名称:GITHUB_URL</h4> <p>GITHUB_URL 即 github 的 username/modulename 的写法，例如：ant-design/ant-design，你还可以在后面指定 tag 和 commit id。比如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;antd&quot;: &quot;ant-design/ant-design#4.0.0-alpha.8&quot;,
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="_5-依赖包名称-git-url"><a href="#_5-依赖包名称-git-url" class="header-anchor">#</a> 5.依赖包名称:GIT_URL</h4> <p>GIT_URL 即我们平时clone代码库的 git url，也就是我第二个方案中使用的<code>git ***.git</code>,比如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>    &quot;@yh/icons-svg&quot;: &quot;git+http://10.16.0.137:8086/wb/icons-svg.git&quot;,
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>上面这个是我内网的仓库，会连接失败的，如果你非要试试：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> &quot;vue-count-to&quot;: &quot;git+https://gitee.com/wangxiaoer520/vue-count-to.git&quot;,
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>依赖配置规则说到这，我们就可以继续说说我的第二个解决方案了</p> <h3 id="方案二-git下载安装依赖包"><a href="#方案二-git下载安装依赖包" class="header-anchor">#</a> 方案二：git下载安装依赖包</h3> <p>有些人看到这也许会问，为什么不把依赖包拿去发布，这个和这个项目约束有关，虽然是一个基于ant-design简单封装的组件库，但是属于公司的，明确要求不能发布到外网，只能存在于内网平台(开源精神呢,我也不知道)。</p> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/82ab531a49e04947bf2f07f35a8dd55b~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p>所以接着说第二个方案：</p> <h4 id="新建项目并上传依赖包"><a href="#新建项目并上传依赖包" class="header-anchor">#</a> 新建项目并上传依赖包</h4> <p>在自己仓库新建项目：
+<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7b68572e5e3a4da68b6a68ab0382c86c~tplv-k3u1fbpfcp-watermark.image" alt="image.png">
+在已有的依赖包中初始化</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>git init
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在依赖包中增加仓库源地址</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>git remote add origin ***.git
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>上传并提交</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>git add .;
+git commit -m '提交信息';
+git push -u origin master;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>然后这个依赖包就可以在配置中使用用：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>依赖包名称:GIT_URL
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="修改原来项目的配置文件"><a href="#修改原来项目的配置文件" class="header-anchor">#</a> 修改原来项目的配置文件</h4> <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2e539167d47740b19239eda8bc1c2bec~tplv-k3u1fbpfcp-watermark.image" alt="image.png">
+这张图是依赖A，刚刚知道了依赖A中的依赖B(@yh/icons-svg)是会安装失败的，我在内网代码管理平台新建了个项目icons-svg用来管理依赖B，然后把A中的文件依赖配置改成对应的 <code>git ***.git</code> <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ab3f0607306f415791c789d2b92f7228~tplv-k3u1fbpfcp-watermark.image" alt="image.png"> <strong>前提是icons-svg依赖中没有依赖C是需要内网安装的，我这已经验证过！</strong>
+然后在内网代码管理平台再新建个项目来管理依赖A(@hsa/hsa-ui)</p> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cdb43f43556d48daa15601d878aa5dfb~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d01b344ce487463fa92f22c783e1c9c3~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p>然后再把代码上传，告之同事，可以直接连上公司内网成功下载依赖，而不会出现依赖安装失败的情况。</p> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/875c4ce1791044a2ba402e693d636823~tplv-k3u1fbpfcp-watermark.image" alt="image.png">
+PS：怎么在仓库新建项目和上传依赖包，这个我就不写了吧！</p> <h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <p>如果你有更好的解决方案，欢迎评论告诉楼主，小弟虚心请教。</p> <p><em>！十分感谢你认真的看完</em></p> <p><code>不妨点个赞，鼓励一下楼主，谢谢！</code></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/769196faea3645d09a07d4e87caaccdd~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <h4 id="题外话"><a href="#题外话" class="header-anchor">#</a> 题外话</h4> <p>flag:我想升个级拿奖励</p> <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ab09cb155c0e4e52973d781060118369~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/10d0922258614595808ae464a87149b4~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><canvas id="vuepress-canvas-ribbon"></canvas><div></div><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.5682a45d.js" defer></script><script src="/assets/js/3.3d624b8a.js" defer></script><script src="/assets/js/1.0e44be9f.js" defer></script><script src="/assets/js/15.145e2ae8.js" defer></script>
+  </body>
+</html>

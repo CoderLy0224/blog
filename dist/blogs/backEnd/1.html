@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用Python(爬虫)自动下载图片 | 小洋博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="1000591.jpg">
+    <meta name="description" content="行则不惧行而不缀行则将至">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.b63ec186.css" as="style"><link rel="preload" href="/assets/js/app.5682a45d.js" as="script"><link rel="preload" href="/assets/js/3.3d624b8a.js" as="script"><link rel="preload" href="/assets/js/1.0e44be9f.js" as="script"><link rel="preload" href="/assets/js/12.6c012fca.js" as="script"><link rel="prefetch" href="/assets/js/10.9c1786e9.js"><link rel="prefetch" href="/assets/js/11.5ec324b4.js"><link rel="prefetch" href="/assets/js/13.4c34a9c7.js"><link rel="prefetch" href="/assets/js/14.885bd7b8.js"><link rel="prefetch" href="/assets/js/15.145e2ae8.js"><link rel="prefetch" href="/assets/js/16.d4bb09d6.js"><link rel="prefetch" href="/assets/js/17.8c0648a7.js"><link rel="prefetch" href="/assets/js/18.b59b0a78.js"><link rel="prefetch" href="/assets/js/19.04cc8fe8.js"><link rel="prefetch" href="/assets/js/20.b25aff72.js"><link rel="prefetch" href="/assets/js/21.485e08ef.js"><link rel="prefetch" href="/assets/js/22.24b753de.js"><link rel="prefetch" href="/assets/js/23.94ab592b.js"><link rel="prefetch" href="/assets/js/24.17503c02.js"><link rel="prefetch" href="/assets/js/25.f463b4f1.js"><link rel="prefetch" href="/assets/js/26.ef1cbc7c.js"><link rel="prefetch" href="/assets/js/27.f9317bf1.js"><link rel="prefetch" href="/assets/js/28.037b3bed.js"><link rel="prefetch" href="/assets/js/29.4b68ce27.js"><link rel="prefetch" href="/assets/js/30.1d08ff1f.js"><link rel="prefetch" href="/assets/js/31.740f07d1.js"><link rel="prefetch" href="/assets/js/32.2ba24938.js"><link rel="prefetch" href="/assets/js/33.48e47229.js"><link rel="prefetch" href="/assets/js/34.ea0e13a6.js"><link rel="prefetch" href="/assets/js/35.641f7d3d.js"><link rel="prefetch" href="/assets/js/36.34f7a5a6.js"><link rel="prefetch" href="/assets/js/37.28a9885a.js"><link rel="prefetch" href="/assets/js/38.d213e0b0.js"><link rel="prefetch" href="/assets/js/39.0adee3ca.js"><link rel="prefetch" href="/assets/js/4.4bcdf1f2.js"><link rel="prefetch" href="/assets/js/40.6a74cd55.js"><link rel="prefetch" href="/assets/js/41.03b005fd.js"><link rel="prefetch" href="/assets/js/5.28a07967.js"><link rel="prefetch" href="/assets/js/6.d22d245d.js"><link rel="prefetch" href="/assets/js/7.03f7d4c3.js"><link rel="prefetch" href="/assets/js/8.e08e1a4e.js"><link rel="prefetch" href="/assets/js/9.5bf008a0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b63ec186.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>小洋博客</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>xiaoyang</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="1000755.jpg" alt="小洋博客" class="logo"> <span class="site-name">小洋博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  小羊主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录索引
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="iconfont undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="iconfont undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/npm/" class="nav-link"><i class="iconfont undefined"></i>
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="iconfont undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="iconfont undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="iconfont undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jquery/" class="nav-link"><i class="iconfont undefined"></i>
+  jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端性能/" class="nav-link"><i class="iconfont undefined"></i>
+  前端性能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="iconfont undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/杂谈/" class="nav-link"><i class="iconfont undefined"></i>
+  杂谈
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签索引
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="/blogs/views/messageBoard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/dlly123" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="./public/1000791.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    xiaoyang
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>28</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>13</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  小羊主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录索引
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="iconfont undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/git/" class="nav-link"><i class="iconfont undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/npm/" class="nav-link"><i class="iconfont undefined"></i>
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="iconfont undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="iconfont undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="iconfont undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/jquery/" class="nav-link"><i class="iconfont undefined"></i>
+  jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端性能/" class="nav-link"><i class="iconfont undefined"></i>
+  前端性能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="iconfont undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/杂谈/" class="nav-link"><i class="iconfont undefined"></i>
+  杂谈
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签索引
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="/blogs/views/messageBoard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/dlly123" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>使用Python(爬虫)自动下载图片</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>xiaoyang</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2022
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">使用Python(爬虫)自动下载图片</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>xiaoyang</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2021-06-26</span></i> <i class="iconfont reco-eye" data-v-3b7f5bdf><span id="/blogs/backEnd/1.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-3b7f5bdf><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>Python</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="准备"><a href="#准备" class="header-anchor">#</a> 准备</h2> <p>何为爬虫：网络爬虫（又称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/5162711?fr=aladdin" target="_blank" rel="noopener noreferrer">百度百科详情<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>随着大数据时代的到来，人们对数据资源的需求越来越多，而爬虫是一种很好的自动采集数据的手段。推荐一个<a href="https://baike.baidu.com/tashuo/browse/content?id=5936ecdc319edfa02c407aff&amp;lemmaId=5162711&amp;fromLemmaModule=pcBottom" target="_blank" rel="noopener noreferrer">Python网络爬虫学习路线解读<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>分享几个Python学习连接：</p> <p>1.<a href="https://blog.csdn.net/pleasecallmewhy/article/details/8922826" target="_blank" rel="noopener noreferrer">请叫我汪海
+的CSDN<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>2.<a href="https://www.liaoxuefeng.com/wiki/1016959663602400" target="_blank" rel="noopener noreferrer">廖雪峰大佬的教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>和<a href="http://www.imooc.com/learn/177" target="_blank" rel="noopener noreferrer">廖雪峰大佬的视频版教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>3.<a href="https://www.cnblogs.com/Albert-Lee/p/6226699.html" target="_blank" rel="noopener noreferrer">爬虫小白入门<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>4.<a href="https://doc.scrapy.org/en/latest/" target="_blank" rel="noopener noreferrer">爬虫框架 Scrapy<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c8e015d086c84bdc94260214fd410ca2~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <h2 id="开始干活"><a href="#开始干活" class="header-anchor">#</a> 开始干活</h2> <p>官网下载<a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener noreferrer">Python<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="安装完成"><a href="#安装完成" class="header-anchor">#</a> 安装完成</h3> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a089f66f29b04b6981d4d55b2619c288~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <h3 id="搜索一份爬图片的代码"><a href="#搜索一份爬图片的代码" class="header-anchor">#</a> 搜索一份爬图片的代码</h3> <p><code>前人种树，后人乘凉，感谢！</code></p> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/861f1d2ef1f3478c84b5f415465413c7~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <h3 id="安装依赖"><a href="#安装依赖" class="header-anchor">#</a> 安装依赖</h3> <p>使用<code>pip install ***</code>安装对应依赖</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>pip install urllib
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>我这使用的时候提示需要升级pip
+<code>python -m pip install --upgrade pip</code></p> <h3 id="运行项目"><a href="#运行项目" class="header-anchor">#</a> 运行项目</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>python main.py
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/19aad4f279d6413c865446395fe4b4f6~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/526679680b4b4cebafe97d8cf4156683~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p>运行，发现成功下载图片。</p> <h3 id="附上代码和代码地址"><a href="#附上代码和代码地址" class="header-anchor">#</a> 附上代码和代码地址</h3> <p><strong>动手试试有惊喜或者惊喜(Practice make perfect!)。</strong></p> <p><a href="https://github.com/wangxiaoer5200/imgAutoDownload" target="_blank" rel="noopener noreferrer">github代码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="https://gitee.com/wangxiaoer520/imgAutoDownload" target="_blank" rel="noopener noreferrer">gitee代码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language- line-numbers-mode"><pre class="language-text"><code># -*- coding:utf-8 -*-
+import os
+import random
+import ssl
+import time
+import urllib.request
+
+from bs4 import BeautifulSoup
+
+# 请求头配置
+USER_AGENT = &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36&quot;
+# 下载地址
+BASE_URL = &quot;https://www.mzitu.com&quot;
+# 保存图片文件夹地址
+BASE_DIR = &quot;../images&quot;
+
+
+def start_work(serial_id):
+    picture_dir = BASE_DIR + os.sep + serial_id
+    if not os.path.exists(picture_dir):
+        os.mkdir(picture_dir)
+    page_count = get_page_count(serial_id)
+    print(&quot;%s 共%d个图片&quot; % (serial_id, page_count))
+    get_image_for_serial(picture_dir,serial_id,page_count)
+
+# 获取页数
+def get_page_count(serial_id):
+    header = {&quot;user-agent&quot;: USER_AGENT}
+    context = ssl._create_unverified_context()
+    url = &quot;%s/%s&quot; % (BASE_URL, serial_id)
+    req = urllib.request.Request(url, headers=header)
+    resp = urllib.request.urlopen(req, context=context)
+    content = resp.read()
+    str_content = content.decode(&quot;utf-8&quot;)
+    total_count = __get_counts(str_content)
+    return total_count
+
+# 获取数量
+def __get_counts(html_content):
+    page_count = 0
+    soup = BeautifulSoup(html_content, 'lxml')
+    data = soup.select(&quot;body &gt; div.main &gt; div.content &gt; div.pagenavi &gt; a &gt; span&quot;)
+    if data and len(data) &gt;= 3:
+        page_count = int(data[-2].get_text())
+    return page_count
+
+# 获取图片地址
+def get_image_url(html_content):
+    soup = BeautifulSoup(html_content, 'lxml')
+    data = soup.select(&quot;body &gt; div.main &gt; div.content &gt; div.main-image &gt; p &gt; a &gt; img&quot;)
+    url = None
+    try:
+        url = data[0].get(&quot;src&quot;)
+    except Exception as ex:
+        print(&quot;exception occur:%s&quot; % ex)
+    return url
+
+# 获取图片地址数组
+def get_all_image_urls(serial_id, page_count):
+    url_list=list()
+    header = {&quot;user-agent&quot;: USER_AGENT}
+    context = ssl._create_unverified_context()
+    if page_count &lt;= 1:
+        return
+
+    for x in range(1,page_count+1):
+        print(&quot;获取第%d张图片的地址&quot; % x)
+        url = &quot;%s/%s/%s&quot; % (BASE_URL, serial_id, x)
+        req = urllib.request.Request(url, headers=header)
+        resp = urllib.request.urlopen(req, context=context)
+        content = resp.read()
+        str_content = content.decode(&quot;utf-8&quot;)
+        img_url = get_image_url(str_content)
+        if img_url:
+            url_list.append(img_url)
+            print(&quot;第%d张图片地址是:%s&quot; % (x, img_url))
+        time.sleep(random.randint(1, 2))
+    return url_list
+
+
+# 获取图片
+def get_image_for_serial(dir_path, serial_id, total_count):
+    for i in range(1, total_count + 1):
+        print(&quot;开始获取第%d张图片&quot; % i)
+        get_image_for_index(dir_path, serial_id, i)
+        sleep_seconds = random.randint(1, 10) /10
+        time.sleep(sleep_seconds)
+
+# 获取具体图片
+def get_image_for_index(dir_path, serial_id, page_index):
+    header = {&quot;user-agent&quot;: USER_AGENT}
+    context = ssl._create_unverified_context()
+    print(&quot;获取第%d张图片的地址&quot; % page_index)
+    ref_url = &quot;%s/%s/%s&quot; % (BASE_URL, serial_id, page_index)
+    req = urllib.request.Request(ref_url, headers=header)
+    resp = urllib.request.urlopen(req, context=context)
+    content = resp.read()
+    str_content = content.decode(&quot;utf-8&quot;)
+    img_url = get_image_url(str_content)
+    if img_url:
+        print(&quot;第%d张图片地址是:%s&quot; % (page_index, img_url))
+        print(&quot;尝试保存图片%s&quot; % img_url)
+        save_img(dir_path, img_url, ref_url)
+
+# 保存图片
+def save_imgs(dir_path, img_urls):
+    for img_addr in img_urls:
+        save_img(dir_path, img_addr)
+
+# 保存具体图片
+def save_img(dir_path, img_url, ref_url):
+    header = {
+        &quot;user-agent&quot;: USER_AGENT,
+        &quot;Referer&quot;: ref_url
+    }
+    context = ssl._create_unverified_context()
+    req = urllib.request.Request(img_url, headers=header)
+    resp = urllib.request.urlopen(req, context=context)
+    content = resp.read()
+    with open(dir_path+os.sep+img_url.split('/')[-1], 'wb') as f:
+        f.write(content)
+        f.close()
+        print(&quot;已向目录:%s 保存文件:%s&quot; % (dir_path, img_url.split('/')[-1]))
+    time.sleep(random.randint(1, 2))
+
+
+if __name__ == &quot;__main__&quot;:
+    vol_list = [&quot;204061&quot;]
+    for serial_id in vol_list:
+        start_work(serial_id)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br></div></div><h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>我学会了Python嘛？并没有！！我只是成功安装了python，然后成功运行了一个用例，算是爬虫的一个实践。我现在会的只是一些基础类型和函数。</p> <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d7a8a09b86f341d389afc0707b0b35f4~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><canvas id="vuepress-canvas-ribbon"></canvas><div></div><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.5682a45d.js" defer></script><script src="/assets/js/3.3d624b8a.js" defer></script><script src="/assets/js/1.0e44be9f.js" defer></script><script src="/assets/js/12.6c012fca.js" defer></script>
+  </body>
+</html>
